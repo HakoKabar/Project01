@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Collection </title>
+</head>
+<body>
+    <h1>DOC LISTS</h1>
+    {% for x in collectt  %}
+    <h1>{{x.name}}</h1>
+    {% endfor %}
+    <form method="post" action="{% url 'name_views_add_collection' %}">
+        {% csrf_token %}
+        <input type="text" name="input_collection-name">
+        <button type="submit">Valide</button>
+    </form>
+    <form method="POST" action ="{% url 'name_views_add_task' %}">
+        {% csrf_token %}
+        <input type="text" name="input_add_description">
+        <button type="submit">Ajouter</button>
+    </form>
+   
+    
+
+   
+    
+</body>
+</html>
