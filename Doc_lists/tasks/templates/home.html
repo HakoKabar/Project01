@@ -6,23 +6,33 @@
     <title>Les Collection </title>
 </head>
 <body>
+   
     <h1>DOC LISTS</h1>
     {% for x in collectt  %}
+    
     <h1>{{x.name}}</h1>
     {% endfor %}
     <form method="post" action="{% url 'name_views_add_collection' %}">
         {% csrf_token %}
         <input type="text" name="input_collection-name">
         <button type="submit">Valide</button>
+
+
+         
     </form>
     <form method="POST" action ="{% url 'name_views_add_task' %}">
         {% csrf_token %}
         <input type="text" name="input_add_description">
         <button type="submit">Ajouter</button>
     </form>
-   
-    
+    {% for x in affiche %}
+    <h1>{{x.description}}</h1>
+    {% endfor %}
 
+   
+    <h1>{{test}}</h1>
+ 
+   
    
     
 </body>
